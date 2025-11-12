@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://yourdomain.com'), // Replace with your actual domain
+    metadataBase: new URL('https://yourdomain.com'),
     title: {
         default: "Component Documentation",
         template: "%s | Component Documentation"
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         siteName: "Component Documentation",
         images: [
             {
-                url: "/og-image.png", // You'll need to create this
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Component Documentation"
@@ -65,7 +66,7 @@ export default function RootLayout({
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
         </head>
-        <body>
+        <body className="flex flex-col min-h-screen">
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -73,7 +74,10 @@ export default function RootLayout({
             disableTransitionOnChange
         >
             <Header />
-            {children}
+            <div className="flex-1">
+                {children}
+            </div>
+            <Footer />
         </ThemeProvider>
         </body>
         </html>
