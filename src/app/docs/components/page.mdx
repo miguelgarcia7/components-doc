@@ -1,0 +1,36 @@
+import { Button } from '@/components/ui/button';
+
+# Components
+
+Explore our collection of reusable components.
+
+## Button
+
+A button component with multiple variants.
+
+<ComponentPreview code={`import { Button } from '@/components/ui/button';
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <Button>Default Button</Button>
+      <Button variant="outline">Outline Button</Button>
+    </div>
+  );
+}`}>
+  <div className="flex gap-4">
+    <Button>Default Button</Button>
+    <Button variant="outline">Outline Button</Button>
+  </div>
+</ComponentPreview>
+
+## Usage
+
+Import and use the button in your components:
+```tsx
+import { Button } from '@/components/ui/button';
+
+export default function MyComponent() {
+  return <Button>Click me</Button>;
+}
+```
